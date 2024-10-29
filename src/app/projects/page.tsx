@@ -8,11 +8,9 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { projects } from "@/data";
 import Hero from "@/components/projects/hero";
 
