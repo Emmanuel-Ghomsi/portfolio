@@ -22,16 +22,11 @@ function Projects() {
         </div>
 
         <div className="mx-auto w-full px-8">
-          <motion.div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             <AnimatePresence>
               {projects.map((project, index) => (
-                <motion.div
+                <div
                   key={index}
-                  layout
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.2 }}
                   className="relative flex h-[40rem] items-center justify-center"
                 >
                   <Card className="h-[35rem] overflow-hidden">
@@ -84,10 +79,10 @@ function Projects() {
                       </div>
                     </CardContent>
                   </Card>
-                </motion.div>
+                </div>
               ))}
             </AnimatePresence>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

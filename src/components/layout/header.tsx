@@ -58,7 +58,7 @@ export default function Header() {
         </Button>
 
         {/* Hamburger Menu for Mobile */}
-        <div className="flex items-center justify-between md:hidden w-full">
+        <div className="flex w-full items-center justify-between md:hidden">
           <Button
             variant="ghost"
             size="icon"

@@ -1,16 +1,10 @@
-import { motion } from "framer-motion";
 import { memo } from "react";
 
 function About() {
   return (
     <section className="px-4 py-20 md:px-0">
       <div className="container mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="gap-8 italic"
-        >
+        <div className="gap-8 italic">
           <blockquote className="my-4 border-s-4 border-gray-300 bg-gray-50 p-4 dark:border-gray-500 dark:bg-gray-800">
             <p className="mb-4">
               Je m&apos;appelle{" "}
@@ -33,7 +27,7 @@ function About() {
               formateur.
             </p>
           </blockquote>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
