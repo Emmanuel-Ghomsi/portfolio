@@ -1,13 +1,12 @@
-"use client";
-
 import { TextGenerateEffect } from "../ui/text-generate-effect";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import Image from "next/image";
 
 import { motion } from "framer-motion";
+import { memo } from "react";
 
-export default function Hero() {
+function Hero() {
   return (
     <section
       id="hero"
@@ -17,7 +16,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.2 }}
           className="md:w-1/2"
         >
           <TextGenerateEffect words="J'aide les entreprises et les particuliers à réaliser des projets numériques de haute qualité, des sites web aux applications mobiles." />
@@ -32,7 +31,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.2, delay: 0.1 }}
           className="mt-10 flex items-center justify-center md:mt-0 md:w-1/2"
         >
           <Image
@@ -47,3 +46,5 @@ export default function Hero() {
     </section>
   );
 }
+
+export default memo(Hero);

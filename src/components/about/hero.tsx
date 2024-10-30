@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { TextGenerateEffect } from "../ui/text-generate-effect";
+import { memo } from "react";
 
-export default function Hero() {
+function Hero() {
   return (
     <section
       id="hero"
@@ -18,3 +19,5 @@ export default function Hero() {
     </section>
   );
 }
+
+export default memo(Hero);

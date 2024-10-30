@@ -1,5 +1,5 @@
-import React from "react";
 import Timeline from "../ui/timeline";
+import { memo } from "react";
 
 const experiences = [
   {
@@ -289,7 +289,7 @@ const teachers = [
   },
 ];
 
-export default function ExperienceTimeline() {
+function ExperienceTimeline() {
   return (
     <section id="experiences" className="py-20">
       <div className="container mx-auto px-6">
@@ -350,3 +350,5 @@ export default function ExperienceTimeline() {
     </section>
   );
 }
+
+export default memo(ExperienceTimeline);

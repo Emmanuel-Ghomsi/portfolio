@@ -1,8 +1,8 @@
-import React from "react";
 import { HoverEffect } from "../ui/card-hover-effect";
 import { approaches } from "@/data";
+import { memo } from "react";
 
-export default function Approach() {
+function Approach() {
   return (
     <section id="approach" className="py-20">
       <div className="container mx-auto px-6">
@@ -18,3 +18,5 @@ export default function Approach() {
     </section>
   );
 }
+
+export default memo(Approach);

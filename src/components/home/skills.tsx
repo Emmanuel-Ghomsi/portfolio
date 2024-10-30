@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { skills } from "@/data";
+import { memo } from "react";
 
-export default function Skills() {
+function Skills() {
   return (
     <section id="approach" className="py-20">
       <div className="container mx-auto px-6">
@@ -37,3 +38,5 @@ export default function Skills() {
     </section>
   );
 }
+
+export default memo(Skills);

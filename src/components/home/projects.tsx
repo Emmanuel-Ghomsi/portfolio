@@ -8,8 +8,9 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
+import { memo } from "react";
 
-export default function Projects() {
+function Projects() {
   return (
     <section id="approach" className="py-20">
       <div className="container mx-auto px-6">
@@ -30,13 +31,13 @@ export default function Projects() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  transition={{ duration: 0.5 }}
+                  transition={{ duration: 0.2 }}
                   className="relative flex h-[40rem] items-center justify-center"
                 >
                   <Card className="h-[30rem] overflow-hidden">
                     <motion.div
                       whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.3 }}
+                      transition={{ duration: 0.2 }}
                     >
                       <Image
                         src={project.image ? project.image : ""}
@@ -92,3 +93,5 @@ export default function Projects() {
     </section>
   );
 }
+
+export default memo(Projects);
