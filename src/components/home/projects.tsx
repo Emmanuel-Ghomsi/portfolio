@@ -34,7 +34,7 @@ function Projects() {
                   transition={{ duration: 0.2 }}
                   className="relative flex h-[40rem] items-center justify-center"
                 >
-                  <Card className="h-[30rem] overflow-hidden">
+                  <Card className="h-[35rem] overflow-hidden">
                     <motion.div
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.2 }}

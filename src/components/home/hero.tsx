@@ -12,7 +12,7 @@ function Hero() {
       id="hero"
       className="flex min-h-screen items-center justify-center"
     >
-      <div className="container mx-auto flex flex-col items-center px-6 md:flex-row">
+      <div className="container mx-auto flex flex-col items-center p-20 px-6 md:flex-row md:p-0">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

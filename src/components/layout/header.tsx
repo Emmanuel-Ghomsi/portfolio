@@ -58,18 +58,25 @@ export default function Header() {
         </Button>
 
         {/* Hamburger Menu for Mobile */}
-        <div className="flex items-center md:hidden">
+        <div className="flex items-center justify-between md:hidden w-full">
           <Button
             variant="ghost"
             size="icon"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle navigation"
           >
-            {isOpen ? (
-              <X className="size-6" />
-            ) : (
-              <Menu className="size-6" />
-            )}
+            {isOpen ? <X className="size-6" /> : <Menu className="size-6" />}
+          </Button>
+
+          {/* Theme Toggle Button for Mobile */}
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          >
+            <Sun className="size-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+            <Moon className="absolute size-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+            <span className="sr-only">Toggle theme</span>
           </Button>
         </div>
       </nav>
@@ -87,17 +94,6 @@ export default function Header() {
               {item.name}
             </Link>
           ))}
-
-          {/* Theme Toggle Button for Mobile */}
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          >
-            <Sun className="size-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-            <Moon className="absolute size-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-            <span className="sr-only">Toggle theme</span>
-          </Button>
         </div>
       )}
     </header>

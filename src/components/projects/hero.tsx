@@ -6,7 +6,7 @@ function Hero() {
   return (
     <section
       id="hero"
-      className="flex min-h-screen items-center justify-center"
+      className="flex min-h-[50vh] items-center justify-center py-20 md:py-0"
     >
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
