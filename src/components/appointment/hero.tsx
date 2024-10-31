@@ -1,7 +1,10 @@
 import { memo } from "react";
 import { TextGenerateEffect } from "../ui/text-generate-effect";
+import useMediaQuery from "@/hooks/use-media-query";
 
 function Hero() {
+  const isMobile = useMediaQuery("(max-width: 768px)");
+
   return (
     <section
       id="hero"
@@ -12,6 +15,7 @@ function Hero() {
           words="Prenez rendez-vous pour une consultation afin de discuter des
               besoins de votre projet ou d'explorer les possibilités de
               collaboration."
+          isMobile={isMobile}
         />
       </div>
     </section>

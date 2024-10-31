@@ -1,3 +1,4 @@
+import { Link2 } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -34,7 +35,7 @@ export default function Timeline({
               className="group"
             >
               {title}{" "}
-              <i className="fas fa-link text-gray hidden text-xs group-hover:inline"></i>
+              <Link2 className="hidden text-xs text-gray-500 group-hover:inline"></Link2>
             </Link>
           </h3>
           <h4 className="text-xs text-primary lg:text-sm">{company}</h4>

@@ -2,8 +2,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import useMediaQuery from "@/hooks/use-media-query";
 
 export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
+  const isMobile = useMediaQuery("(max-width: 768px)");
   const rows = new Array(150).fill(1);
   const cols = new Array(100).fill(1);
   const colors = [
@@ -35,7 +37,7 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
       {rows.map((_, i) => (
         <motion.div
           key={`row` + i}
-          className="w-16 h-8  border-l  border-slate-700 relative"
+          className="relative h-8  w-16  border-l border-slate-700"
         >
           {cols.map((_, j) => (
             <motion.div
@@ -44,10 +46,10 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
                 transition: { duration: 0 },
               }}
               animate={{
-                transition: { duration: 2 },
+                transition: { duration: isMobile ? 0.2 : 2 },
               }}
               key={`col` + j}
-              className="w-16 h-8  border-r border-t border-slate-700 relative"
+              className="relative h-8  w-16 border-r border-t border-slate-700"
             >
               {j % 2 === 0 && i % 2 === 0 ? (
                 <svg
@@ -56,7 +58,7 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="absolute h-6 w-10 -top-[14px] -left-[22px] text-slate-700 stroke-[1px] pointer-events-none"
+                  className="pointer-events-none absolute -left-[22px] -top-[14px] h-6 w-10 stroke-[1px] text-slate-700"
                 >
                   <path
                     strokeLinecap="round"

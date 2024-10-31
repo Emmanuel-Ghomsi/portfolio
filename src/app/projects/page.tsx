@@ -14,6 +14,7 @@ import {
 import { projects } from "@/data";
 import { HeroSkeleton } from "@/components/about/skeleton/hero-skeleton";
 import { ProjectSectionSkeleton } from "@/components/projects/project-section-skeleton";
+import useMediaQuery from "@/hooks/use-media-query";
 
 // Chargement asynchrone des composants
 const Hero = lazy(() => import("@/components/projects/hero"));
@@ -26,6 +27,7 @@ const allTechnologies = Array.from(
 
 export default function ProjectsPage() {
   const [selectedTech, setSelectedTech] = useState<string | null>(null);
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   const filteredProjects = selectedTech
     ? projects.filter((project) =>
@@ -77,12 +79,12 @@ export default function ProjectsPage() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: isMobile ? 0.1 : 0.5 }}
                   >
                     <Card className="overflow-hidden">
                       <motion.div
                         whileHover={{ scale: 1.05 }}
-                        transition={{ duration: 0.3 }}
+                        transition={{ duration: isMobile ? 0.1 : 0.3 }}
                       >
                         <Image
                           src={project.image ?? ""}
@@ -90,6 +92,7 @@ export default function ProjectsPage() {
                           width={400}
                           height={300}
                           className="h-48 w-full object-cover"
+                          loading="lazy"
                         />
                       </motion.div>
                       <CardHeader>
@@ -102,7 +105,7 @@ export default function ProjectsPage() {
                             <motion.div
                               key={i}
                               whileHover={{ scale: 1.1 }}
-                              transition={{ duration: 0.2 }}
+                              transition={{ duration: isMobile ? 0.1 : 0.2 }}
                             >
                               <div
                                 className="flex size-8 items-center justify-center rounded-full border border-zinc-400 bg-white lg:size-10"
@@ -116,6 +119,7 @@ export default function ProjectsPage() {
                                   className="p-2"
                                   width={50}
                                   height={50}
+                                  loading="lazy"
                                 />
                               </div>
                             </motion.div>

@@ -4,12 +4,14 @@ import { useState, useEffect, Suspense, lazy } from "react";
 import { motion } from "framer-motion";
 import { HeroSkeleton } from "@/components/about/skeleton/hero-skeleton";
 import { CalendlySkeleton } from "@/components/appointment/calendly-skeleton";
+import useMediaQuery from "@/hooks/use-media-query";
 
 // Chargement asynchrone des composants
 const Hero = lazy(() => import("@/components/appointment/hero"));
 
 export default function AppointmentPage() {
   const [isMounted, setIsMounted] = useState(false);
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   useEffect(() => {
     setIsMounted(true);
@@ -28,7 +30,10 @@ export default function AppointmentPage() {
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{
+                duration: isMobile ? 0.1 : 0.5,
+                delay: isMobile ? 0.1 : 0.2,
+              }}
               className="overflow-hidden rounded-lg bg-card text-card-foreground shadow-lg"
             >
               {isMounted && (

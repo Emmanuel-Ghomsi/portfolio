@@ -9,8 +9,11 @@ import {
   CardTitle,
 } from "../ui/card";
 import { memo } from "react";
+import useMediaQuery from "@/hooks/use-media-query";
 
 function Projects() {
+  const isMobile = useMediaQuery("(max-width: 768px)");
+
   return (
     <section id="approach" className="py-20">
       <div className="container mx-auto px-6">
@@ -32,7 +35,7 @@ function Projects() {
                   <Card className="h-[35rem] overflow-hidden">
                     <motion.div
                       whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.2 }}
+                      transition={{ duration: isMobile ? 0.1 : 0.2 }}
                     >
                       <Image
                         src={project.image ? project.image : ""}
@@ -40,6 +43,7 @@ function Projects() {
                         width={400}
                         height={300}
                         className="h-48 w-full object-cover"
+                        loading="lazy"
                       />
                     </motion.div>
                     <CardHeader>
@@ -58,7 +62,7 @@ function Projects() {
                           <motion.div
                             key={i}
                             whileHover={{ scale: 1.1 }}
-                            transition={{ duration: 0.2 }}
+                            transition={{ duration: isMobile ? 0.1 : 0.2 }}
                           >
                             <div
                               className="flex size-8 items-center justify-center rounded-full border border-zinc-400 bg-white lg:size-10"
@@ -72,6 +76,7 @@ function Projects() {
                                 className="p-2"
                                 width={50}
                                 height={50}
+                                loading="lazy"
                               />
                             </div>
                           </motion.div>

@@ -26,6 +26,7 @@ function Skills() {
                   height="30"
                   width="30"
                   className="size-6 md:size-8"
+                  loading="lazy"
                 />
                 <p className="ml-2 text-xs font-medium text-black dark:text-neutral-200 md:ml-3 md:text-sm">
                   {skill.name}

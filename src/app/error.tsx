@@ -19,10 +19,10 @@ export default function GlobalError({
 
   return (
     <div className="flex min-h-screen w-full flex-col items-center justify-center px-4 py-12 text-center">
-      <h1 className="text-3xl font-semibold mb-4 text-red-500">
+      <h1 className="mb-4 text-3xl font-semibold text-red-500">
         Une erreur est survenue
       </h1>
-      <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
+      <p className="mb-8 text-lg text-gray-600 dark:text-gray-300">
         Un problème est survenu lors du chargement de la page. Veuillez
         réessayer ou retourner à l&apos;accueil.
       </p>

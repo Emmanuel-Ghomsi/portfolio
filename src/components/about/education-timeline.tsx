@@ -34,7 +34,7 @@ function EducationTimeline() {
           <hr className="w-1/6 border-2 border-primary/20 dark:border-primary/50" />
         </div>
 
-        <div className="mx-auto flex w-full flex-col justify-center py-4 px-8 bg-white rounded-lg dark:bg-slate-900">
+        <div className="mx-auto flex w-full flex-col justify-center rounded-lg bg-white px-8 py-4 dark:bg-slate-900">
           {educations.map((education, index) => (
             <Timeline
               key={index}

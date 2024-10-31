@@ -1,7 +1,10 @@
+import useMediaQuery from "@/hooks/use-media-query";
 import { TextGenerateEffect } from "../ui/text-generate-effect";
 import { memo } from "react";
 
 function Hero() {
+  const isMobile = useMediaQuery("(max-width: 768px)");
+
   return (
     <section
       id="hero"
@@ -12,6 +15,7 @@ function Hero() {
           words="Découvrez une collection d'applications web et de solutions
               logicielles innovantes que j'ai développées et qui témoignent
               de mon expertise en matière de développement intégral."
+          isMobile={isMobile}
         />
       </div>
     </section>
